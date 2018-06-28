@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cheese</title>
+  </head>
+  <body>
+    First Name: <input id="myText" type="text" value="colors">
+
+    <select name="" onchange="myFunction(event)">
+    <option disabled selected>Choose Database Type</option>
+    <option value="Green">green</option>
+    <option value="Red">red</option>
+    <option value="Orange">orange</option>
+    <option value="Black">black</option>
+</select>
+
+    <script>
+    function myFunction(e) {
+    document.getElementById("myText").value = e.target.value
+}
+    </script>
+</body>
+  <!-- <body>
+    <form id="personalinfo">
+      First Name:<br>
+      <input type="text" name="firstname"><br>
+      Last Name:<br>
+      <input type="text" name="lastname"><br>
+      Employee Number:<br>
+      <input type="number" name="employeenumber"><br>
+      <input type="submit"
+    </form>
+
+    <select name = "variety" form="personalinfo">
+      <option value="select" selected>Select</option>
+      <option value="marblejack">Marble Jack</option>
+      <option value="pepperjack">pepper Jack</option>
+      <option value="montereyjack">Monterey Jack</option>
+    </select>
+  </body> -->
+</html>

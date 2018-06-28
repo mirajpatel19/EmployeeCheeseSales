@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Order Cheese</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <img src="C:\Users\mpatel\Desktop\Root Folder\Images\joseph-farms-cheese-header.jpg" alt="Joseph Gallo Farms Image">
+  <h1 id="title">Employee Cheese Sales</h1>
+
+  <form action="mailto:mpatel@josephfarms.com" method="post" enctype="text/plain">
+    <fieldset>
+      <legend>
+        <h3>Personal Information:</h3></legend>
+      First Name:<br>
+      <input type="text" name="firstname"><br> Last Name:<br>
+      <input type="text" name="lastname"><br> Employee Number:<br>
+      <input type="number" name="employeenumber"><br> Cheese Sale Date:<br>
+      <input type="date" name="saledate"><br>
+      <!-- Today's Date:<br>
+        <input type="date" name"todaydate"><br> -->
+      <p id="date"></p>
+    </fieldset>
+    <script>
+      var todaydate = new Date();
+      document.getElementById("date").innerHTML = todaydate;
+    </script>
+
+    <fieldset>
+      <legend>
+        <h3>Cheese:</h3></legend>
+      <table>
+        <tr>
+          <th>Number</th>
+          <th>Variety</th>
+          <th>Style</th>
+          <th>Size(lb)</th>
+          <th>Pounds</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>
+            <!-- <form id="varietySubmitForms1" name="varietyForm1" action="actionPage.php" method="post"> ...Add post page link -->
+            <select id="variety1-1" name="variety1">
+              <option value="select" selected>Select</option>
+              <option value="Marble Jack">Marble Jack</option>
+              <option value="Pepper Jack">Pepper Jack</option>
+              <option value="Monterey Jack">Monterey Jack</option>
+            </select>
+
+          </td>
+          <td>
+            <!-- <form id="styleSubmitForms" name="styleForm" action="actionPage.php" method="post"> -->
+            <select id="style1-1" name="style1">
+              <option value="select" selected>Select</option>
+              <option value="Ball">Ball</option>
+              <option value="Bar">Bar</option>
+              <option value="Chunk">Chunk</option>
+              <option value="Horn">Horn</option>
+              <option value="Loaf">Loaf</option>
+              <option value="Shred">Shred</option>
+              <option value="Sliced">Sliced</option>
+              <option value="String">String</option>
+            </select>
+            <!-- </form> -->
+          </td>
+          <!-- <input type="button" value="Click Me!" onclick="submitForms()" />
+          <script>
+            submitForms = function() {
+              document.getElementById("varietySubmitForms").submit();
+              document.getElementById("styleSubmitForms").submit();
+            }
+          </script>  -->
+          <td>
+            <select id="size1-1" name="size1">
+              <option value="0" selected>0</option>
+              <option value="1Lb">1 lb</option>
+              <option value="2.5Lb">2.5 lb</option>
+              <option value="5Lb">5 lb</option>
+            </select>
+          </td>
+          <td>
+            <select id="pounds1-1" name="pounds1" onchange="myCalTotal()">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <select name="variety2">
+                <option value="select" selected>Select</option>
+                <option value="marblejack">Marble Jack</option>
+                <option value="pepperjack">pepper Jack</option>
+                <option value="montereyjack">Monterey Jack</option>
+              </select>
+          </td>
+          <td>
+            <select name="style2">
+                <option value="select" selected>Select</option>
+                <option value="Ball">Ball</option>
+                <option value="Bar">Bar</option>
+                <option value="Chunk">Chunk</option>
+                <option value="Horn">Horn</option>
+                <option value="Loaf">Loaf</option>
+                <option value="Shred">Shred</option>
+                <option value="Sliced">Sliced</option>
+                <option value="String">String</option>
+              </select>
+          </td>
+          <td>
+            <select name="size2">
+                <option value="0" selected>0</option>
+                <option value="1lb">1 lb</option>
+                <option value="2.5lb">2.5 lb</option>
+                <option value="5lb">5 lb</option>
+              </select>
+          </td>
+          <td>
+            <select id="pounds2-1" name="pounds2" onchange="myCalTotal()">
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <select name="variety3">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style3">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size3">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds3-1" name="pounds3" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <select name="variety4">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style4">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size4">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds4-1" name="pounds4" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <select name="variety5">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style5">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size5">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds5-1" name="pounds5" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>
+            <select name="varity6">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style6">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size6">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds6-1" name="pounds6" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>
+            <select name="variety7">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style7">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size7">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds7-1" name="pounds7" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>
+            <select name="varity8">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style8">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size8">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds8-1" name="pounds8" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>
+            <select name="variety9">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style9">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size9">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds9-1" name="pounds9" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>
+            <select name="variety10">
+                  <option value="select" selected>Select</option>
+                  <option value="marblejack">Marble Jack</option>
+                  <option value="pepperjack">Pepper Jack</option>
+                  <option value="montereyjack">Monterey Jack</option>
+                </select>
+          </td>
+          <td>
+            <select name="style10">
+                  <option value="select" selected>Select</option>
+                  <option value="Ball">Ball</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Chunk">Chunk</option>
+                  <option value="Horn">Horn</option>
+                  <option value="Loaf">Loaf</option>
+                  <option value="Shred">Shred</option>
+                  <option value="Sliced">Sliced</option>
+                  <option value="String">String</option>
+                </select>
+          </td>
+          <td>
+            <select name="size10">
+                  <option value="0" selected>0</option>
+                  <option value="1lb">1 lb</option>
+                  <option value="2.5lb">2.5 lb</option>
+                  <option value="5lb">5 lb</option>
+                </select>
+          </td>
+          <td>
+            <select id="pounds10-1" name="pounds10" onchange="myCalTotal()">
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <h3>Total</h3>
+          </td>
+          <td>
+            <p id="total"></p>
+          </td>
+        </tr>
+      </table>
+      <button id="submit" type="submit" onclick="myMessageSummary()">Submit</button>
+      <button id="reset" type="reset" onclick="myReset()">Reset</button>
+    </fieldset>
+  </form>
+  <script>
+    function myMessageSummary() {
+      window.open("about.html");
+    }
+  </script>
+
+  <!-- Code to reset total box with reset button. -->
+  <script>
+    function myReset() {
+      document.getElementById("total").innerHTML = "";
+    }
+  </script>
+  <script>
+    function myCalTotal() {
+      var calPounds1 = document.getElementById("pounds1-1").value;
+      var calPounds2 = document.getElementById("pounds2-1").value;
+      var calPounds3 = document.getElementById("pounds3-1").value;
+      var calPounds4 = document.getElementById("pounds4-1").value;
+      var calPounds5 = document.getElementById("pounds5-1").value;
+      var calPounds6 = document.getElementById("pounds6-1").value;
+      var calPounds7 = document.getElementById("pounds7-1").value;
+      var calPounds8 = document.getElementById("pounds8-1").value;
+      var calPounds9 = document.getElementById("pounds9-1").value;
+      var calPounds10 = document.getElementById("pounds10-1").value;
+      var calTotal = parseInt(calPounds1) + parseInt(calPounds2) + parseInt(calPounds3) + parseInt(calPounds4) + parseInt(calPounds5) + parseInt(calPounds6) + parseInt(calPounds7) + parseInt(calPounds8) + parseInt(calPounds9) + parseInt(calPounds10);
+      // Need to work more on alert message!
+      if (parseInt(calTotal) > 15) {
+        alert("Employee are not allowed to purchase cheese more than 15 Pounds!");
+      } else {
+        document.getElementById("total").innerHTML = calTotal;
+      }
+    }
+  </script>
+
+
+  <!-- <table>
+    <tr>
+      <td id="varietySummary1"></td>
+      <td id="styleSummary1"></td>
+      <td id="sizeSummary1"></td>
+      <td id="poundsSummary1"></td>
+    </tr>
+  </table> -->
+
+  <!-- <script>
+    function myMessageSummary() {
+      var none = "None";
+      var select = "select"
+      var zero = "0"
+
+      var variety11 = document.getElementById("variety1-1").value;
+      if (variety11 == select) {
+        document.getElementById("varietySummary1").innerHTML = none;
+      } else {
+        document.getElementById("varietySummary1").innerHTML = variety11;
+      }
+      var style11 = document.getElementById("style1-1").value;
+      if (style11 == select) {
+        document.getElementById("styleSummary1").innerHTML = none;
+      } else {
+        document.getElementById("styleSummary1").innerHTML = style11;
+      }
+      var size11 = document.getElementById("size1-1").value;
+      if (size11 == select) {
+        document.getElementById("sizeSummary1").innerHTML = none;
+      } else {
+        document.getElementById("sizeSummary1").innerHTML = size11;
+      }
+      alert(variety11 + " " + style11);
+    }
+  </script> -->
+
+  <!-- <p id="testVariety" </p> -->
+</body>
+
+</html>
